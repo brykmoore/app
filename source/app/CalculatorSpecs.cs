@@ -29,7 +29,7 @@ namespace app
         static int result;
       }
 
-      public class a_negative_to_a_positive
+      public class and_either_of_the_arguments_in_negative
       {
         Because b = () =>
           spec.catch_exception(() => sut.add(2, -3));

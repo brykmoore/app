@@ -10,3 +10,7 @@
 4. Convention for configuration
   * All new micro configuration files should live under the source/config folder and be named:
     [NewConfigName].[real_extension].erb - ex. our_custom_config.txt.erb
+
+5. All components with dependencies(collaborators), will be guaranteed to be created with all of their dependencies provided.
+
+6. Null is not an allowable return value from any of our own value returning methods. (Throw exceptions or assume null object pattern usage).

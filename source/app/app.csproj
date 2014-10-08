@@ -102,7 +102,9 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="CalculatorSpecs.cs" />
+    <Compile Include="HandlerRegistrySpecs.cs" />
     <Compile Include="request_handling\FrontController.cs" />
+    <Compile Include="request_handling\HandlerRegistry.cs" />
     <Compile Include="request_handling\IGetHandlersForRequests.cs" />
     <Compile Include="request_handling\IHandleAllWebRequests.cs" />
     <Compile Include="FrontControllerSpecs.cs" />

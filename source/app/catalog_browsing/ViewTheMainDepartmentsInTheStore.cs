@@ -1,4 +1,5 @@
 ﻿using app.request_handling;
+using app.request_handling.aspnet;
 using app.stubs;
 
 namespace app.catalog_browsing
@@ -9,7 +10,7 @@ namespace app.catalog_browsing
     IDisplayInformation display_engine;
 
     public ViewTheMainDepartmentsInTheStore():this(new StubStoreCatalog(),
-      new StubDisplayEngine())
+      new WebFormDisplayEngine())
     {
     }
 

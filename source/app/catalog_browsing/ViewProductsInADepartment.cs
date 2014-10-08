@@ -1,4 +1,5 @@
 ﻿using app.request_handling;
+using app.request_handling.aspnet;
 using app.stubs;
 
 namespace app.catalog_browsing
@@ -14,7 +15,7 @@ namespace app.catalog_browsing
       this.products = products;
     }
 
-    public ViewProductsInADepartment():this(new StubDisplayEngine(), 
+    public ViewProductsInADepartment():this(new WebFormDisplayEngine(), 
       new StubStoreCatalog())
     {
     }

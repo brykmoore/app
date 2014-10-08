@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Web;
+using System.Web.Compilation;
 using app.request_handling;
 using app.request_handling.aspnet;
 
@@ -20,5 +22,10 @@ namespace app.stubs
     {
       throw new NotImplementedException("There is no handler that can handle this request");
     };
+
+    public static ICreatePageInstances create_page = (path, type) =>
+      (IHttpHandler) BuildManager.CreateInstanceFromVirtualPath(path, type);
+
+    public static IGetTheCurrentRequest get_current_request = () => HttpContext.Current;
   }
 }

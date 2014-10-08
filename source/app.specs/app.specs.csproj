@@ -112,6 +112,7 @@
     <Compile Include="AspNetRequestHandlerSpecs.cs" />
     <Compile Include="test_utilities\ObjectFactory.cs" />
     <Compile Include="WebFormDisplayEngineSpecs.cs" />
+    <Compile Include="WebFormFactorySpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\app\app.csproj">

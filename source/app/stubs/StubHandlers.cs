@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using app.catalog_browsing;
 using app.request_handling;
-using developwithpassion.specifications.extensions;
 
 namespace app.stubs
 {

@@ -15,8 +15,21 @@ namespace app.specs
 
     public class when_displaying_information : concern
     {
-      It OBSERVATION_NAME = () =>
-        
+      Establish c = () =>
+      {
+        some_report = new SomeReport();
+      };
+
+      Because b = () =>
+        sut.display(some_report);
+
+      It OBSERVATION_NAME = () => 
+
+      static SomeReport some_report;
     }
+  }
+
+  public class SomeReport
+  {
   }
 }

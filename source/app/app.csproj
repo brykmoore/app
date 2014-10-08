@@ -101,12 +101,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="catalog_browsing\DeparmentsInDepartmentRequest.cs" />
     <Compile Include="catalog_browsing\IFindDepartments.cs" />
     <Compile Include="catalog_browsing\DepartmentLineItem.cs" />
+    <Compile Include="catalog_browsing\IFindProducts.cs" />
+    <Compile Include="catalog_browsing\ProductsInDepartmentRequest.cs" />
+    <Compile Include="catalog_browsing\ProductSummaryLine.cs" />
+    <Compile Include="catalog_browsing\ViewDeparmentsInADepartment.cs" />
+    <Compile Include="catalog_browsing\ViewProductsInADepartment.cs" />
     <Compile Include="catalog_browsing\ViewTheMainDepartmentsInTheStore.cs" />
+    <Compile Include="constraints\IEnforceAConstraint.cs" />
     <Compile Include="request_handling.aspnet\AspNetRequestHandler.cs" />
     <Compile Include="request_handling.aspnet\ICreateControllerRequestsFromAspNetRequests.cs" />
-    <Compile Include="stubs\StubDepartments.cs" />
+    <Compile Include="request_handling\ConstrainedFeature.cs" />
+    <Compile Include="stubs\StubStoreCatalog.cs" />
     <Compile Include="stubs\StubDisplayEngine.cs" />
     <Compile Include="stubs\StubHandlers.cs" />
     <Compile Include="stubs\StubRequestHandlingDelegates.cs" />

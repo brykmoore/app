@@ -8,7 +8,7 @@ namespace app.catalog_browsing
     IFindDepartments departments;
     IDisplayInformation display_engine;
 
-    public ViewTheMainDepartmentsInTheStore():this(new StubDepartments(),
+    public ViewTheMainDepartmentsInTheStore():this(new StubStoreCatalog(),
       new StubDisplayEngine())
     {
     }

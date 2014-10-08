@@ -19,9 +19,9 @@ namespace app.specs
     {
       Establish c = () =>
       {
-        departments = depends.on<IFindDepartments>();
-        display_engine = depends.on<IDisplayInformation>();
         request = fake.an<IProvideRequestDetails>();
+        display_engine = depends.on<IDisplayInformation>();
+        departments = depends.on<IFindDepartments>();
         the_main_departments = new List<DepartmentLineItem>();
 
         departments.setup(x => x.get_the_main_departments()).Return(the_main_departments);

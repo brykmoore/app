@@ -14,3 +14,7 @@
 5. All components with dependencies(collaborators), will be guaranteed to be created with all of their dependencies provided.
 
 6. Null is not an allowable return value from any of our own value returning methods. (Throw exceptions or assume null object pattern usage).
+
+7. There will be at most 1 logical view per report model
+
+8. An input model per logical request

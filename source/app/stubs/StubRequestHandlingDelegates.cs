@@ -10,6 +10,10 @@ namespace app.stubs
 
     class StubRequest : IProvideRequestDetails
     {
+      public InputModel map<InputModel>()
+      {
+        return Activator.CreateInstance<InputModel>();
+      }
     }
 
     public static ICreateTheMissingHandler missing_handler_builder = x =>

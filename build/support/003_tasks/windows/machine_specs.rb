@@ -1,7 +1,7 @@
 namespace :specs do
   desc 'view the spec report'
   task :view do
-    system "start #{configatron.specs.report_dir}/#{configatron.project}.html"
+    system "start #{configatron.specs.report_dir}/#{configatron.project}.specs.html"
   end
 
   desc 'run the specs for the project'
@@ -10,7 +10,7 @@ namespace :specs do
       FileUtils.cp(file,configatron.artifacts_dir)
     end
 
-    sh "#{configatron.artifacts_dir}/mspec-clr4.exe", "--html", "#{configatron.specs.report_dir}/#{configatron.project}.html", *(configatron.specs.runner_options + configatron.specs.assemblies)
+    sh "#{configatron.artifacts_dir}/mspec-clr4.exe", "--html", "#{configatron.specs.report_dir}/#{configatron.project}.specs.html", *(configatron.specs.runner_options + configatron.specs.assemblies)
   end
 
 end

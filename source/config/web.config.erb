@@ -27,11 +27,11 @@
    </system.web>
   <system.webServer>
     <% if configatron.has_iis_express %>
-    <!--<handlers>
-      <add name="" path=""
+    <handlers>
+      <add name="our_handler" path="*.store"
         verb="*"
-        type=""/>
-        </handlers> -->
+        type="app.request_handling.aspnet.AspNetRequestHandler, app"/>
+        </handlers>
     <% end %>
   </system.webServer>
 

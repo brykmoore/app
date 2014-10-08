@@ -3,7 +3,7 @@ using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
 
-namespace app
+namespace app.specs
 {
   [Subject(typeof(FrontController))]
   public class FrontControllerSpecs

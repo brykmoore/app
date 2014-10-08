@@ -5,10 +5,10 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{922EF2FE-820B-4ED5-9D64-7D716E135719}</ProjectGuid>
+    <ProjectGuid>{0CA71AB9-7D6D-42CB-8AA2-ECBC9D63EDBA}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>app</RootNamespace>
-    <AssemblyName>app</AssemblyName>
+    <RootNamespace>app.specs</RootNamespace>
+    <AssemblyName>app.specs</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
@@ -100,28 +100,20 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculator.cs" />
-    <Compile Include="catalog_browsing\IFindDepartments.cs" />
-    <Compile Include="catalog_browsing\DepartmentLineItem.cs" />
-    <Compile Include="catalog_browsing\ViewTheMainDepartmentsInTheStore.cs" />
-    <Compile Include="request_handling.aspnet\AspNetRequestHandler.cs" />
-    <Compile Include="request_handling.aspnet\ICreateControllerRequestsFromAspNetRequests.cs" />
-    <Compile Include="stubs\StubDepartments.cs" />
-    <Compile Include="stubs\StubDisplayEngine.cs" />
-    <Compile Include="stubs\StubHandlers.cs" />
-    <Compile Include="stubs\StubRequestHandlingDelegates.cs" />
-    <Compile Include="request_handling\FrontController.cs" />
-    <Compile Include="request_handling\Handler.cs" />
-    <Compile Include="request_handling\HandlerRegistry.cs" />
-    <Compile Include="request_handling\ICreateTheMissingHandler.cs" />
-    <Compile Include="request_handling\IDisplayInformation.cs" />
-    <Compile Include="request_handling\IGetHandlersForRequests.cs" />
-    <Compile Include="request_handling\IHandleAllWebRequests.cs" />
-    <Compile Include="MessageGenerator.cs" />
-    <Compile Include="request_handling\IHandleOneRequest.cs" />
-    <Compile Include="request_handling\IMatchARequest.cs" />
-    <Compile Include="request_handling\IProvideRequestDetails.cs" />
-    <Compile Include="request_handling\IRunAFeature.cs" />
+    <Compile Include="CalculatorSpecs.cs" />
+    <Compile Include="FrontControllerSpecs.cs" />
+    <Compile Include="HandlerRegistrySpecs.cs" />
+    <Compile Include="HandlerSpecs.cs" />
+    <Compile Include="MessageGeneratorSpecs.cs" />
+    <Compile Include="ViewTheMainDepartmentsInTheStoreSpecs.cs" />
+    <Compile Include="AspNetRequestHandlerSpecs.cs" />
+    <Compile Include="test_utilities\ObjectFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\app\app.csproj">
+      <Project>{922ef2fe-820b-4ed5-9d64-7d716e135719}</Project>
+      <Name>app</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -132,7 +124,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>cd $(SolutionDir)
+rake copy_config_files</PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -1,11 +1,11 @@
-﻿ using System.Collections.Generic;
- using System.Linq;
- using app.request_handling;
- using Machine.Specifications;
- using developwithpassion.specifications.rhinomocks;
- using developwithpassion.specifications.extensions;
+﻿using System.Collections.Generic;
+using System.Linq;
+using app.request_handling;
+using developwithpassion.specifications.extensions;
+using developwithpassion.specifications.rhinomocks;
+using Machine.Specifications;
 
-namespace app
+namespace app.specs
 {  
   [Subject(typeof(HandlerRegistry))]  
   public class HandlerRegistrySpecs

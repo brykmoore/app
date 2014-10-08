@@ -8,7 +8,7 @@ using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
 using Rhino.Mocks;
 
-namespace app
+namespace app.specs
 {
   public class CalculatorSpecs
   {

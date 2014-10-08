@@ -2,11 +2,15 @@
 {
   public class FrontController : IHandleAllWebRequests
   {
-    public  IGetHandlersForRequests handler_registry;
+    public IGetHandlersForRequests handler_registry;
 
     public FrontController(IGetHandlersForRequests handler_registry)
     {
       this.handler_registry = handler_registry;
+    }
+
+    public FrontController() : this(new HandlerRegistry())
+    {
     }
 
     public void handle(IProvideRequestDetails request)

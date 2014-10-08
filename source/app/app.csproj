@@ -107,9 +107,6 @@
     <Compile Include="catalog_browsing\IFindProducts.cs" />
     <Compile Include="catalog_browsing\ProductsInDepartmentRequest.cs" />
     <Compile Include="catalog_browsing\ProductSummaryLine.cs" />
-    <Compile Include="catalog_browsing\ViewDeparmentsInADepartment.cs" />
-    <Compile Include="catalog_browsing\ViewProductsInADepartment.cs" />
-    <Compile Include="catalog_browsing\ViewTheMainDepartmentsInTheStore.cs" />
     <Compile Include="constraints\IEnforceAConstraint.cs" />
     <Compile Include="request_handling.aspnet\AspNetRequestHandler.cs" />
     <Compile Include="request_handling.aspnet\ICreateControllerRequestsFromAspNetRequests.cs" />
@@ -123,8 +120,12 @@
     <Compile Include="request_handling.aspnet\WebFormDisplayEngine.cs" />
     <Compile Include="request_handling.aspnet\WebFormFactory.cs" />
     <Compile Include="request_handling\ConstrainedFeature.cs" />
+    <Compile Include="request_handling\IFetchAReport.cs" />
+    <Compile Include="request_handling\ViewReport.cs" />
+    <Compile Include="stubs\GetDepartmentsInDepartment.cs" />
+    <Compile Include="stubs\GetProductsInDepartment.cs" />
+    <Compile Include="stubs\GetTheMainDepartments.cs" />
     <Compile Include="stubs\StubPathRegistry.cs" />
-    <Compile Include="stubs\StubStoreCatalog.cs" />
     <Compile Include="stubs\StubHandlers.cs" />
     <Compile Include="stubs\StubRequestHandlingDelegates.cs" />
     <Compile Include="request_handling\FrontController.cs" />

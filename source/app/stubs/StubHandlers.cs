@@ -14,16 +14,19 @@ namespace app.stubs
 
     public IEnumerator<IHandleOneRequest> GetEnumerator()
     {
-      yield return new Handler(x => true, create_feature<ViewTheMainDepartmentsInTheStore>());
-      yield return new Handler(x => true, create_feature<ViewDeparmentsInADepartment>());
-      yield return new Handler(x => true, create_feature<ViewProductsInADepartment>());
+      yield return create_handler_to_view<IEnumerable<DepartmentLineItem>, GetTheMainDepartments>();
+      yield return create_handler_to_view<IEnumerable<DepartmentLineItem>, GetDepartmentsInDepartment>();
+      yield return create_handler_to_view<IEnumerable<ProductSummaryLine>, GetProductsInDepartment>();
     }
 
-    public IRunAFeature create_feature<Feature>() where Feature : IRunAFeature, new()
+    IHandleOneRequest create_handler_to_view<Report>(IFetchAReport<Report> query)
     {
-      IRunAFeature feature = new Feature();
+      return new Handler(x => true, new ViewReport<Report>(query));
+    }
 
-      return feature;
+    IHandleOneRequest create_handler_to_view<Report, Query>() where Query : IFetchA<Report>, new()
+    {
+      return create_handler_to_view(new Query().fetch_using);
     }
   }
 }

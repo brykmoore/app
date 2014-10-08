@@ -106,9 +106,7 @@
     <Compile Include="HandlerRegistrySpecs.cs" />
     <Compile Include="HandlerSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />
-    <Compile Include="ViewDeparmentsInADepartmentSpecs.cs" />
-    <Compile Include="ViewProductsInADepartmentSpecs.cs" />
-    <Compile Include="ViewTheMainDepartmentsInTheStoreSpecs.cs" />
+    <Compile Include="ViewReportSpecs.cs" />
     <Compile Include="AspNetRequestHandlerSpecs.cs" />
     <Compile Include="test_utilities\ObjectFactory.cs" />
     <Compile Include="WebFormDisplayEngineSpecs.cs" />

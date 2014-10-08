@@ -72,14 +72,24 @@
     <None Include="build\support\003_tasks\windows\git.rb.erb" />
     <None Include="build\support\003_tasks\windows\growl.rb" />
     <None Include="build\support\003_tasks\windows\machine_specs.rb" />
+    <None Include="continuous_testing" />
     <None Include="docs\conventions.markdown" />
+    <None Include="fetch_branch" />
     <None Include="fetch_latest" />
+    <None Include="get_latest_from_jp" />
+    <None Include="git_utils.rb" />
+    <None Include="kill_runner_processes.bat.erb" />
     <None Include="push" />
     <None Include="Rakefile" />
+    <None Include="reset" />
+    <None Include="rr" />
     <None Include="run_first" />
     <None Include="save_my_changes" />
+    <None Include="source\config\applicationhost.config.erb" />
+    <None Include="source\config\log4net.config.xml.erb" />
     <None Include="source\config\web.config.erb" />
     <None Include="start_new_exercise" />
+    <None Include="trash" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">

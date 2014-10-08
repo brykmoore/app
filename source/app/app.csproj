@@ -102,8 +102,14 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="CalculatorSpecs.cs" />
+    <Compile Include="request_handling\FrontController.cs" />
+    <Compile Include="request_handling\IGetHandlersForRequests.cs" />
+    <Compile Include="request_handling\IHandleAllWebRequests.cs" />
+    <Compile Include="FrontControllerSpecs.cs" />
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />
+    <Compile Include="request_handling\IHandleOneRequest.cs" />
+    <Compile Include="request_handling\IProvideRequestDetails.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

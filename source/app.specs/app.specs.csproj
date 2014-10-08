@@ -111,6 +111,7 @@
     <Compile Include="ViewTheMainDepartmentsInTheStoreSpecs.cs" />
     <Compile Include="AspNetRequestHandlerSpecs.cs" />
     <Compile Include="test_utilities\ObjectFactory.cs" />
+    <Compile Include="WebFormDisplayEngineSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\app\app.csproj">

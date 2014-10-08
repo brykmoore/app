@@ -14,7 +14,6 @@ namespace app.stubs
 
       HttpContext.Current.Items.Add("report", report);
       HttpContext.Current.Server.Transfer(String.Format("~/views/{0}.aspx", view));
-
     }
   }
 }

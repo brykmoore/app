@@ -34,15 +34,20 @@ namespace app.startup
           return second_step;
         });
       };
+
       Because b = () =>
         result = sut.then<NextStep>();
 
-      It returns_a_new_pipeline_builder_with_the_combined_step_as_its_initial_step = () =>
-      {
-        var builder = result.ShouldBeAn<StartupPipelineBuilder>();
-        builder.initial_step.ShouldEqual(combined_step);
-        builder.step_factory.ShouldEqual(step_factory);
-      };
+      It returns_a_new_pipeline_builder = () =>
+        result.ShouldBeAn<StartupPipelineBuilder>().ShouldNotEqual(sut);
+
+      It returned_pipeline_builders_step_is_the_combined_step = () =>
+        result.ShouldBeAn<StartupPipelineBuilder>().initial_step.ShouldEqual(combined_step);
+
+      It returned_pipeline_builders_step_factory_is_correct = () =>
+        result.ShouldBeAn<StartupPipelineBuilder>().step_factory.ShouldEqual(step_factory);
+
+        
 
       static ICreateStartupPipelines result;
       static IRunnable combined_step;

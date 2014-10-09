@@ -1,21 +1,36 @@
-﻿using app.containers.core;
+﻿using System;
+using app.containers.core;
 
 namespace app.containers.basic
 {
   public class Container : IGetDependencies
   {
     IGetFactoriesForObjects factories;
+    ICreateACustomErrorWhenTheDependencyCantBeCreated custom_error_builder;
 
-    public Container(IGetFactoriesForObjects factories)
+    public Container(IGetFactoriesForObjects factories, ICreateACustomErrorWhenTheDependencyCantBeCreated custom_error_builder)
     {
       this.factories = factories;
+      this.custom_error_builder = custom_error_builder;
     }
 
     public Dependency an<Dependency>()
     {
-      var factory = factories.get_factory_that_can_create(typeof(Dependency));
+      return (Dependency) an(typeof(Dependency));
+    }
 
-      return (Dependency) factory.create();
+    public object an(Type type)
+    {
+      var factory = factories.get_factory_that_can_create(type);
+
+      try
+      {
+        return factory.create();
+      }
+      catch (Exception e)
+      {
+        throw custom_error_builder(type, e);
+      }
     }
   }
 }

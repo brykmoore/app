@@ -117,6 +117,7 @@
     <Compile Include="containers.basic\ICreateAnObjectFactoryWhenOneCantBeFound.cs" />
     <Compile Include="containers.basic\ICreateOneObject.cs" />
     <Compile Include="containers.basic\IMatchAType.cs" />
+    <Compile Include="containers.basic\IPickTheContructorUsedToCreateAType.cs" />
     <Compile Include="containers.basic\ObjectFactory.cs" />
     <Compile Include="containers.basic\ObjectFactorySpecs.cs" />
     <Compile Include="request_handling\ConstrainedFeatureSpecs.cs" />

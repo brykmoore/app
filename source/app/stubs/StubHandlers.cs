@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using app.catalog_browser.queries;
 using app.catalog_browsing;
 using app.request_handling;
 

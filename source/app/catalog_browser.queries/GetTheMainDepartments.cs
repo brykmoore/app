@@ -3,7 +3,7 @@ using System.Linq;
 using app.catalog_browsing;
 using app.request_handling;
 
-namespace app.stubs
+namespace app.catalog_browser.queries
 {
   public class GetTheMainDepartments : IFetchA<IEnumerable<DepartmentLineItem>>
   {

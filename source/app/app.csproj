@@ -108,6 +108,8 @@
     <Compile Include="catalog_browsing\IFindProducts.cs" />
     <Compile Include="catalog_browsing\ProductsInDepartmentRequest.cs" />
     <Compile Include="catalog_browsing\ProductSummaryLine.cs" />
+    <Compile Include="containers.basic\DependencyFactories.cs" />
+    <Compile Include="containers.basic\DependencyFactoriesSpecs.cs" />
     <Compile Include="request_handling\ConstrainedFeatureSpecs.cs" />
     <Compile Include="constraints\IEnforceAConstraint.cs" />
     <Compile Include="containers.basic\Container.cs" />
@@ -138,9 +140,9 @@
     <Compile Include="request_handling\ConstrainedFeature.cs" />
     <Compile Include="request_handling\IFetchAReport.cs" />
     <Compile Include="request_handling\ViewReport.cs" />
-    <Compile Include="stubs\GetDepartmentsInDepartment.cs" />
-    <Compile Include="stubs\GetProductsInDepartment.cs" />
-    <Compile Include="stubs\GetTheMainDepartments.cs" />
+    <Compile Include="catalog_browser.queries\GetDepartmentsInDepartment.cs" />
+    <Compile Include="catalog_browser.queries\GetProductsInDepartment.cs" />
+    <Compile Include="catalog_browser.queries\GetTheMainDepartments.cs" />
     <Compile Include="stubs\StubPathRegistry.cs" />
     <Compile Include="stubs\StubHandlers.cs" />
     <Compile Include="stubs\StubRequestHandlingDelegates.cs" />
@@ -160,6 +162,9 @@
     <Compile Include="request_handling\ViewReportSpecs.cs" />
     <Compile Include="request_handling.aspnet\WebFormDisplayEngineSpecs.cs" />
     <Compile Include="request_handling.aspnet\WebFormFactorySpecs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -2,6 +2,6 @@
 {
   public interface IGetDependencies
   {
-     
+    Dependency an<Dependency>();
   }
 }

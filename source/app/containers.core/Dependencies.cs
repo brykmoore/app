@@ -9,6 +9,12 @@ namespace app.containers.core
       throw new NotImplementedException("This needs to be overwritten by a startup process");
     };
 
-    public static IGetDependencies fetch { get; set; }
+    public static IGetDependencies fetch
+    {
+      get
+      {
+        return access_the_container();
+      }
+    }
   }
 }

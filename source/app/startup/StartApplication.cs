@@ -14,11 +14,11 @@ namespace app.startup
 
     public static void run()
     {
-      initialize_the_container();
-      configure_front_controller();
+      configure_the_container();
+      register_request_handling_dependencies();
     }
 
-    static void configure_front_controller()
+    static void register_request_handling_dependencies()
     {
       register<IHandleAllWebRequests, FrontController>();
       register<IGetHandlersForRequests, HandlerRegistry>();
@@ -33,15 +33,7 @@ namespace app.startup
       register(StubRuntimeDelegates.web.get_current_request);
     }
 
-    public class TimedHandlerRegistry : IGetHandlersForRequests
-    {
-      public IHandleOneRequest get_the_handler_that_can_handle(IProvideRequestDetails request)
-      {
-        throw new System.NotImplementedException();
-      }
-    }
-
-    static void initialize_the_container()
+    static void configure_the_container()
     {
       factories = new List<ICreateAnObject>();
 

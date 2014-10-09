@@ -1,4 +1,5 @@
-﻿using developwithpassion.specifications.rhinomocks;
+﻿using System;
+using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
 
 namespace app.containers.basic
@@ -18,6 +19,7 @@ namespace app.containers.basic
         Establish c = () =>
         {
           the_factory = fake.an<ICreateAnObject>();
+          depends.on<Type>();
         };
 
         Because b = () =>

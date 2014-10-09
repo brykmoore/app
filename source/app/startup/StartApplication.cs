@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using app.containers.basic;
 using app.containers.core;
 using app.request_handling;
@@ -17,43 +18,33 @@ namespace app.startup
       var container = new Container(factory_registry, StubRuntimeDelegates.startup.create_dependency_error_builder);
       Dependencies.access_the_container = () => container;
 
-      //register dependencies
-      factories.Add(new ObjectFactory(StubRuntimeDelegates.containers.is_instance_of<IHandleAllWebRequests>(),
-        new BasicFactory(() => new FrontController(container.an<IGetHandlersForRequests>()))));
+      factories.Add(add_object_factory<IHandleAllWebRequests>(() => new FrontController(container.an<IGetHandlersForRequests>())));
 
-      factories.Add(new ObjectFactory(StubRuntimeDelegates.containers.is_instance_of<IGetHandlersForRequests>(),
-        new BasicFactory(() => new HandlerRegistry(container.an<IEnumerable<IHandleOneRequest>>(),
-          container.an<ICreateTheMissingHandler>()))));
+      factories.Add(add_object_factory<IGetHandlersForRequests>(() => new HandlerRegistry(container.an<IEnumerable<IHandleOneRequest>>(),
+          container.an<ICreateTheMissingHandler>())));
+        
+      factories.Add(add_object_factory<IEnumerable<IHandleOneRequest>>(() => new StubHandlers()));
 
-      factories.Add(new ObjectFactory(StubRuntimeDelegates.containers.is_instance_of<IEnumerable<IHandleOneRequest>>(),
-        new BasicFactory(() => new StubHandlers())));
+      factories.Add(add_object_factory<ICreateTheMissingHandler>(() => StubRuntimeDelegates.web.missing_handler_builder));
 
-      factories.Add(new ObjectFactory(StubRuntimeDelegates.containers.is_instance_of<ICreateTheMissingHandler>(),
-        new BasicFactory(() => StubRuntimeDelegates.web.missing_handler_builder)));
+      factories.Add(add_object_factory<IDisplayInformation>(() => new WebFormDisplayEngine(container.an<ICreateWebFormBasedViews>(),
+          container.an<IGetTheCurrentRequest>())));
 
-      factories.Add(new ObjectFactory(StubRuntimeDelegates.containers.is_instance_of<IDisplayInformation>(),
-        new BasicFactory(() => new WebFormDisplayEngine(container.an<ICreateWebFormBasedViews>(),
-          container.an<IGetTheCurrentRequest>()))));
+      factories.Add(add_object_factory<ICreateWebFormBasedViews>(() => new WebFormFactory(container.an<IFindPathsToWebPages>(), container.an<ICreatePageInstances>())));
+      
+      factories.Add(add_object_factory<ICreatePageInstances>(() => StubRuntimeDelegates.web.create_page));
+      
+      factories.Add(add_object_factory<IFindPathsToWebPages>(() => new StubPathRegistry()));
 
-      factories.Add(new ObjectFactory(StubRuntimeDelegates.containers.is_instance_of<ICreateWebFormBasedViews>(),
-        new BasicFactory(
-          () => new WebFormFactory(container.an<IFindPathsToWebPages>(), container.an<ICreatePageInstances>()))));
+      factories.Add(add_object_factory<ICreateControllerRequestsFromAspNetRequests>(() => StubRuntimeDelegates.web.request_builder));
 
-      factories.Add(new ObjectFactory(StubRuntimeDelegates.containers.is_instance_of<ICreatePageInstances>(),
-        new BasicFactory(() => StubRuntimeDelegates.web.create_page)));
+      factories.Add(add_object_factory<IGetTheCurrentRequest>(() => StubRuntimeDelegates.web.get_current_request));
 
-      factories.Add(new ObjectFactory(StubRuntimeDelegates.containers.is_instance_of<IFindPathsToWebPages>(),
-        new BasicFactory(() => new StubPathRegistry())));
-
-      factories.Add(
-        new ObjectFactory(StubRuntimeDelegates.containers.is_instance_of<ICreateControllerRequestsFromAspNetRequests>(),
-          new BasicFactory(
-            () => StubRuntimeDelegates.web.request_builder)));
-
-      factories.Add(
-        new ObjectFactory(StubRuntimeDelegates.containers.is_instance_of<IGetTheCurrentRequest>(),
-          new BasicFactory(
-            () => StubRuntimeDelegates.web.get_current_request)));
     }
+
+    private static ICreateAnObject add_object_factory<Contract>(ICreate factory)
+      {
+          return new ObjectFactory(StubRuntimeDelegates.containers.is_instance_of<Contract>(), new BasicFactory(factory));
+      }
   }
 }

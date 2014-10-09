@@ -1,7 +1,8 @@
-﻿namespace app.containers.basic
+﻿using System;
+
+namespace app.containers.basic
 {
-  public interface ICreateAnObject
+  public interface ICreateAnObject : ICreateOneObject
   {
-    object create();
-  }
+    bool can_create(Type type); }
 }

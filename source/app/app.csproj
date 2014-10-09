@@ -110,6 +110,11 @@
     <Compile Include="catalog_browsing\ProductSummaryLine.cs" />
     <Compile Include="containers.basic\DependencyFactories.cs" />
     <Compile Include="containers.basic\DependencyFactoriesSpecs.cs" />
+    <Compile Include="containers.basic\ICreateAnObjectFactoryWhenOneCantBeFound.cs" />
+    <Compile Include="containers.basic\ICreateOneObject.cs" />
+    <Compile Include="containers.basic\IMatchAType.cs" />
+    <Compile Include="containers.basic\ObjectFactory.cs" />
+    <Compile Include="containers.basic\ObjectFactorySpecs.cs" />
     <Compile Include="request_handling\ConstrainedFeatureSpecs.cs" />
     <Compile Include="constraints\IEnforceAConstraint.cs" />
     <Compile Include="containers.basic\Container.cs" />

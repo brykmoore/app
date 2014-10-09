@@ -1,6 +1,4 @@
-﻿using app.request_handling.aspnet;
-
-namespace app.request_handling
+﻿namespace app.request_handling
 {
   public class ViewReport<Report> : IRunAFeature
   {
@@ -11,14 +9,6 @@ namespace app.request_handling
     {
       this.query = query;
       this.display_engine = display_engine;
-    }
-
-    public ViewReport(IFetchAReport<Report> query):this(query, new WebFormDisplayEngine())
-    {
-    }
-
-    public ViewReport(IFetchA<Report> query):this(query.fetch_using)
-    {
     }
 
     public void handle(IProvideRequestDetails request)

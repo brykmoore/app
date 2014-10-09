@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using app.catalog_browsing;
 using app.request_handling;
@@ -21,7 +22,7 @@ namespace app.stubs
 
     IHandleOneRequest create_handler_to_view<Report>(IFetchAReport<Report> query)
     {
-      return new Handler(x => true, new ViewReport<Report>(query));
+      throw new NotImplementedException();
     }
 
     IHandleOneRequest create_handler_to_view<Report, Query>() where Query : IFetchA<Report>, new()

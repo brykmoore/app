@@ -16,7 +16,6 @@ namespace app.specs
     {
         
     }
-
    
     public class when_processing_a_new_http_context_based_request : concern
     {

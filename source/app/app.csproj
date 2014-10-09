@@ -108,6 +108,9 @@
     <Compile Include="catalog_browsing\ProductsInDepartmentRequest.cs" />
     <Compile Include="catalog_browsing\ProductSummaryLine.cs" />
     <Compile Include="constraints\IEnforceAConstraint.cs" />
+    <Compile Include="containers.core\Dependencies.cs" />
+    <Compile Include="containers.core\IGetDependencies.cs" />
+    <Compile Include="containers.core\IProvideAccessToTheContainerConfiguredAtStartup.cs" />
     <Compile Include="request_handling.aspnet\AspNetRequestHandler.cs" />
     <Compile Include="request_handling.aspnet\ICreateControllerRequestsFromAspNetRequests.cs" />
     <Compile Include="request_handling.aspnet\ICreatePageInstances.cs" />

@@ -1,16 +1,9 @@
-﻿using app.stubs;
-
-namespace app.request_handling.aspnet
+﻿namespace app.request_handling.aspnet
 {
   public class WebFormDisplayEngine : IDisplayInformation
   {
     ICreateWebFormBasedViews view_factory;
     IGetTheCurrentRequest current_request;
-
-    public WebFormDisplayEngine():this(new WebFormFactory(),
-      StubRequestHandlingDelegates.get_current_request)
-    {
-    }
 
     public WebFormDisplayEngine(ICreateWebFormBasedViews view_factory, IGetTheCurrentRequest current_request)
     {

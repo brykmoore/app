@@ -102,6 +102,7 @@
   <ItemGroup>
     <Compile Include="CalculatorSpecs.cs" />
     <Compile Include="ConstrainedFeatureSpecs.cs" />
+    <Compile Include="DependenciesSpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />
     <Compile Include="HandlerRegistrySpecs.cs" />
     <Compile Include="HandlerSpecs.cs" />

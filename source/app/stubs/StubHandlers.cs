@@ -22,7 +22,8 @@ namespace app.stubs
 
     IHandleOneRequest create_handler_to_view<Report>(IFetchAReport<Report> query)
     {
-      return new Handler(x => true, new ViewReport<Report>(query));
+//      return new Handler(x => true, new ViewReport<Report>(query));
+      throw new NotImplementedException();
     }
 
     IHandleOneRequest create_handler_to_view<Report, Query>() where Query : IFetchA<Report>, new()

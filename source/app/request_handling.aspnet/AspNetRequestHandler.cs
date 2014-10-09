@@ -1,5 +1,5 @@
 ﻿using System.Web;
-using app.stubs;
+using app.containers.core;
 
 namespace app.request_handling.aspnet
 {
@@ -8,8 +8,8 @@ namespace app.request_handling.aspnet
     IHandleAllWebRequests front_controller;
     ICreateControllerRequestsFromAspNetRequests request_factory;
 
-    public AspNetRequestHandler() : this(new FrontController(),
-      StubRequestHandlingDelegates.request_builder)
+    public AspNetRequestHandler() : this(Dependencies.fetch.an<IHandleAllWebRequests>(),
+      Dependencies.fetch.an<ICreateControllerRequestsFromAspNetRequests>())
     {
     }
 

@@ -1,8 +1,7 @@
-﻿using app.containers.core;
-using developwithpassion.specifications.rhinomocks;
+﻿using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
 
-namespace app.specs
+namespace app.containers.core
 {
   [Subject(typeof(Dependencies))]
   public class DependenciesSpecs

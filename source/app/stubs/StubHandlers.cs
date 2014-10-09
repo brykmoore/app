@@ -22,7 +22,7 @@ namespace app.stubs
 
     IHandleOneRequest create_handler_to_view<Report>(IFetchAReport<Report> query)
     {
-      throw new NotImplementedException();
+      return new Handler(x => true, new ViewReport<Report>(query));
     }
 
     IHandleOneRequest create_handler_to_view<Report, Query>() where Query : IFetchA<Report>, new()

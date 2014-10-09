@@ -1,11 +1,10 @@
 ﻿using System;
-using app.containers.basic;
 using app.containers.core;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
 
-namespace app.specs
+namespace app.containers.basic
 {
   [Subject(typeof(Container))]
   public class ContainerSpecs

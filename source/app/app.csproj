@@ -101,12 +101,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="CalculatorSpecs.cs" />
     <Compile Include="catalog_browsing\DeparmentsInDepartmentRequest.cs" />
     <Compile Include="catalog_browsing\IFindDepartments.cs" />
     <Compile Include="catalog_browsing\DepartmentLineItem.cs" />
     <Compile Include="catalog_browsing\IFindProducts.cs" />
     <Compile Include="catalog_browsing\ProductsInDepartmentRequest.cs" />
     <Compile Include="catalog_browsing\ProductSummaryLine.cs" />
+    <Compile Include="request_handling\ConstrainedFeatureSpecs.cs" />
     <Compile Include="constraints\IEnforceAConstraint.cs" />
     <Compile Include="containers.basic\Container.cs" />
     <Compile Include="containers.basic\ICreateACustomErrorWhenTheDependencyCantBeCreated.cs" />
@@ -115,7 +117,14 @@
     <Compile Include="containers.core\Dependencies.cs" />
     <Compile Include="containers.core\IGetDependencies.cs" />
     <Compile Include="containers.core\IProvideAccessToTheContainerConfiguredAtStartup.cs" />
+    <Compile Include="containers.basic\ContainerSpecs.cs" />
+    <Compile Include="containers.core\DependenciesSpecs.cs" />
+    <Compile Include="request_handling\FrontControllerSpecs.cs" />
+    <Compile Include="request_handling\HandlerRegistrySpecs.cs" />
+    <Compile Include="request_handling\HandlerSpecs.cs" />
+    <Compile Include="MessageGeneratorSpecs.cs" />
     <Compile Include="request_handling.aspnet\AspNetRequestHandler.cs" />
+    <Compile Include="request_handling.aspnet\AspNetRequestHandlerSpecs.cs" />
     <Compile Include="request_handling.aspnet\ICreateControllerRequestsFromAspNetRequests.cs" />
     <Compile Include="request_handling.aspnet\ICreatePageInstances.cs" />
     <Compile Include="request_handling.aspnet\ICreateWebFormBasedViews.cs" />
@@ -147,6 +156,10 @@
     <Compile Include="request_handling\IMatchARequest.cs" />
     <Compile Include="request_handling\IProvideRequestDetails.cs" />
     <Compile Include="request_handling\IRunAFeature.cs" />
+    <Compile Include="test_utilities\ObjectFactory.cs" />
+    <Compile Include="request_handling\ViewReportSpecs.cs" />
+    <Compile Include="request_handling.aspnet\WebFormDisplayEngineSpecs.cs" />
+    <Compile Include="request_handling.aspnet\WebFormFactorySpecs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

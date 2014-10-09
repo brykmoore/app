@@ -1,4 +1,5 @@
 ﻿using System.Web;
+using app.stubs;
 
 namespace app.request_handling.aspnet
 {
@@ -11,6 +12,10 @@ namespace app.request_handling.aspnet
     {
       this.page_paths = page_paths;
       this.page_factory = page_factory;
+    }
+
+    public WebFormFactory():this(new StubPathRegistry(), StubRequestHandlingDelegates.create_page)
+    {
     }
 
     public IHttpHandler create_view_to_display<Report>(Report report)

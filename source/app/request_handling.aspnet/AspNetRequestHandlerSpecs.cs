@@ -1,12 +1,10 @@
 ﻿using System.Web;
-using app.request_handling;
-using app.request_handling.aspnet;
-using app.specs.test_utilities;
+using app.test_utilities;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
 
-namespace app.specs
+namespace app.request_handling.aspnet
 {  
   [Subject(typeof(AspNetRequestHandler))]  
   public class AspNetRequestHandlerSpecs

@@ -1,10 +1,9 @@
-﻿ using app.constraints;
- using app.request_handling;
- using Machine.Specifications;
- using developwithpassion.specifications.rhinomocks;
- using developwithpassion.specifications.extensions;
+﻿using app.constraints;
+using developwithpassion.specifications.extensions;
+using developwithpassion.specifications.rhinomocks;
+using Machine.Specifications;
 
-namespace app.specs
+namespace app.request_handling
 {  
   [Subject(typeof(ConstrainedFeature))]  
   public class ConstrainedFeatureSpecs

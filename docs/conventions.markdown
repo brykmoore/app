@@ -18,3 +18,5 @@
 7. There will be at most 1 logical view per report model
 
 8. An input model per logical request
+
+9. All startup steps need to be an implementation of IRunAStartupStep and they need to provide a ctor that takes an IProvideStartupFeatures instance, so they can leverage startup features if necessary.

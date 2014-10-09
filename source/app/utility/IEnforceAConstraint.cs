@@ -1,4 +1,4 @@
-﻿namespace app.constraints
+﻿namespace app.utility
 {
   public delegate bool IEnforceAConstraint();
 }

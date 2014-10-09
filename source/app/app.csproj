@@ -121,7 +121,7 @@
     <Compile Include="containers.basic\ObjectFactory.cs" />
     <Compile Include="containers.basic\ObjectFactorySpecs.cs" />
     <Compile Include="request_handling\ConstrainedFeatureSpecs.cs" />
-    <Compile Include="constraints\IEnforceAConstraint.cs" />
+    <Compile Include="utility\IEnforceAConstraint.cs" />
     <Compile Include="containers.basic\Container.cs" />
     <Compile Include="containers.basic\ICreateACustomErrorWhenTheDependencyCantBeCreated.cs" />
     <Compile Include="containers.basic\ICreateAnObject.cs" />
@@ -153,6 +153,11 @@
     <Compile Include="catalog_browser.queries\GetDepartmentsInDepartment.cs" />
     <Compile Include="catalog_browser.queries\GetProductsInDepartment.cs" />
     <Compile Include="catalog_browser.queries\GetTheMainDepartments.cs" />
+    <Compile Include="startup\ConfigureFrontController.cs" />
+    <Compile Include="startup\ConfigureRoutes.cs" />
+    <Compile Include="startup\ConfiguringTheContainer.cs" />
+    <Compile Include="startup\IProvideStartupFeatures.cs" />
+    <Compile Include="startup\IRunAStartupStep.cs" />
     <Compile Include="startup\StartApplication.cs" />
     <Compile Include="startup\StartApplicationSpecs.cs" />
     <Compile Include="stubs\StubPathRegistry.cs" />
@@ -174,6 +179,7 @@
     <Compile Include="request_handling\ViewReportSpecs.cs" />
     <Compile Include="request_handling.aspnet\WebFormDisplayEngineSpecs.cs" />
     <Compile Include="request_handling.aspnet\WebFormFactorySpecs.cs" />
+    <Compile Include="utility\IRunnable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

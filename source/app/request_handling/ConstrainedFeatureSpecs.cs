@@ -1,4 +1,4 @@
-﻿using app.constraints;
+﻿using app.utility;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;

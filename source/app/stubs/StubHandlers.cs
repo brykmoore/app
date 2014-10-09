@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using app.catalog_browser.queries;
 using app.catalog_browsing;
+using app.containers.core;
 using app.request_handling;
 
 namespace app.stubs
@@ -23,8 +23,7 @@ namespace app.stubs
 
     IHandleOneRequest create_handler_to_view<Report>(IFetchAReport<Report> query)
     {
-//      return new Handler(x => true, new ViewReport<Report>(query));
-      throw new NotImplementedException();
+      return new Handler(x => true, new ViewReport<Report>(query, Dependencies.fetch.an<IDisplayInformation>()));
     }
 
     IHandleOneRequest create_handler_to_view<Report, Query>() where Query : IFetchA<Report>, new()

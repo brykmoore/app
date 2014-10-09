@@ -108,6 +108,8 @@
     <Compile Include="catalog_browsing\IFindProducts.cs" />
     <Compile Include="catalog_browsing\ProductsInDepartmentRequest.cs" />
     <Compile Include="catalog_browsing\ProductSummaryLine.cs" />
+    <Compile Include="containers.basic\BasicFactory.cs" />
+    <Compile Include="containers.basic\BasicFactorySpecs.cs" />
     <Compile Include="containers.basic\DependencyFactories.cs" />
     <Compile Include="containers.basic\DependencyFactoriesSpecs.cs" />
     <Compile Include="containers.basic\ICreateAnObjectFactoryWhenOneCantBeFound.cs" />
@@ -148,9 +150,11 @@
     <Compile Include="catalog_browser.queries\GetDepartmentsInDepartment.cs" />
     <Compile Include="catalog_browser.queries\GetProductsInDepartment.cs" />
     <Compile Include="catalog_browser.queries\GetTheMainDepartments.cs" />
+    <Compile Include="startup\StartApplication.cs" />
+    <Compile Include="startup\StartApplicationSpecs.cs" />
     <Compile Include="stubs\StubPathRegistry.cs" />
     <Compile Include="stubs\StubHandlers.cs" />
-    <Compile Include="stubs\StubRequestHandlingDelegates.cs" />
+    <Compile Include="stubs\StubRuntimeDelegates.cs" />
     <Compile Include="request_handling\FrontController.cs" />
     <Compile Include="request_handling\Handler.cs" />
     <Compile Include="request_handling\HandlerRegistry.cs" />

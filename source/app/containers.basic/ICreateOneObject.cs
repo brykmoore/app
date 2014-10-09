@@ -4,4 +4,6 @@
   {
     object create(); 
   }
+
+  public delegate object ICreate();
 }

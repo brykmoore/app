@@ -46,10 +46,10 @@ namespace app.containers.basic
 
       It returns_the_object_with_all_of_its_dependencies_provided = () =>
       {
-        var result = sut.ShouldBeAn<MyTypeWithDependencies>();
-        result.connection.ShouldEqual(connection);
-        result.command.ShouldEqual(command);
-        result.other.ShouldEqual(other);
+        var item = result.ShouldBeAn<MyTypeWithDependencies>();
+        item.connection.ShouldEqual(connection);
+        item.command.ShouldEqual(command);
+        item.other.ShouldEqual(other);
       };
 
       static IDbConnection connection;

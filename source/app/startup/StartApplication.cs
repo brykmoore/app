@@ -14,38 +14,34 @@ namespace app.startup
 
     public static void run()
     {
-      configure_the_container();
-      register_request_handling_dependencies();
+      initialize_the_container();
+      configure_front_controller();
     }
 
-    static void register_request_handling_dependencies()
+    static void configure_front_controller()
     {
-      register<IHandleAllWebRequests>(() => new FrontController(container.an<IGetHandlersForRequests>()));
+      register<IHandleAllWebRequests, FrontController>();
+      register<IGetHandlersForRequests, HandlerRegistry>();
+      register<IEnumerable<IHandleOneRequest>, StubHandlers>();
+      register<IDisplayInformation, WebFormDisplayEngine>();
+      register<ICreateWebFormBasedViews, WebFormFactory>();
+      register<IFindPathsToWebPages, StubPathRegistry>();
 
-      register<IGetHandlersForRequests>(
-        () => new HandlerRegistry(container.an<IEnumerable<IHandleOneRequest>>(),
-          container.an<ICreateTheMissingHandler>()));
-
-      register<IEnumerable<IHandleOneRequest>>(() => new StubHandlers());
-
-      register<ICreateTheMissingHandler>(() => StubRuntimeDelegates.web.missing_handler_builder);
-
-      register<IDisplayInformation>(() => new WebFormDisplayEngine(container.an<ICreateWebFormBasedViews>(),
-        container.an<IGetTheCurrentRequest>()));
-
-      register<ICreateWebFormBasedViews>(
-        () => new WebFormFactory(container.an<IFindPathsToWebPages>(), container.an<ICreatePageInstances>()));
-
-      register<ICreatePageInstances>(() => StubRuntimeDelegates.web.create_page);
-
-      register<IFindPathsToWebPages>(() => new StubPathRegistry());
-
-      register<ICreateControllerRequestsFromAspNetRequests>(() => StubRuntimeDelegates.web.request_builder);
-
-      register<IGetTheCurrentRequest>(() => StubRuntimeDelegates.web.get_current_request);
+      register(StubRuntimeDelegates.web.create_page);
+      register(StubRuntimeDelegates.web.missing_handler_builder);
+      register(StubRuntimeDelegates.web.request_builder);
+      register(StubRuntimeDelegates.web.get_current_request);
     }
 
-    static void configure_the_container()
+    public class TimedHandlerRegistry : IGetHandlersForRequests
+    {
+      public IHandleOneRequest get_the_handler_that_can_handle(IProvideRequestDetails request)
+      {
+        throw new System.NotImplementedException();
+      }
+    }
+
+    static void initialize_the_container()
     {
       factories = new List<ICreateAnObject>();
 
@@ -56,10 +52,21 @@ namespace app.startup
       Dependencies.access_the_container = () => container;
     }
 
-    static void register<Contract>(ICreate factory)
+    static void register<Contract>(Contract implementation)
+    {
+      register<Contract>(new BasicFactory(() => implementation));
+    }
+
+    static void register<Contract, Implementation>() where Implementation : Contract
+    {
+      register<Contract>(new AutomaticDependencyInjectionFactory(typeof(Implementation),
+        StubRuntimeDelegates.startup.greediest_ctor, container));
+    }
+
+    static void register<Contract>(ICreateOneObject factory)
     {
       var type_specification = StubRuntimeDelegates.containers.is_instance_of<Contract>();
-      factories.Add(new ObjectFactory(type_specification, new BasicFactory(factory)));
+      factories.Add(new ObjectFactory(type_specification, factory));
     }
   }
 }

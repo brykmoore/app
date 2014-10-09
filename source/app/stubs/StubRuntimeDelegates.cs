@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web;
 using System.Web.Compilation;
 using app.containers.basic;
@@ -20,6 +21,9 @@ namespace app.stubs
       {
         throw new NotImplementedException(string.Format("There was an error creating the type: {0}", type.FullName), inner);
       };
+
+      public static IPickTheContructorUsedToCreateAType greediest_ctor = x =>
+        x.GetConstructors().OrderByDescending(y => y.GetParameters().Count()).First();
     }
 
     public class containers

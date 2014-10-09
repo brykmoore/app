@@ -121,6 +121,14 @@
     <Compile Include="containers.basic\ObjectFactory.cs" />
     <Compile Include="containers.basic\ObjectFactorySpecs.cs" />
     <Compile Include="request_handling\ConstrainedFeatureSpecs.cs" />
+    <Compile Include="startup\ICreateAStartupPipelineBuilder.cs" />
+    <Compile Include="startup\ICreateStartupPipelines .cs" />
+    <Compile Include="startup\ICreateStartupSteps.cs" />
+    <Compile Include="startup\Start.cs" />
+    <Compile Include="startup\StartSpecs.cs" />
+    <Compile Include="startup\StartupPipelineBuilder.cs" />
+    <Compile Include="startup\StartupPipelineBuilderSpecs.cs" />
+    <Compile Include="utility\ICombineCommands.cs" />
     <Compile Include="utility\IEnforceAConstraint.cs" />
     <Compile Include="containers.basic\Container.cs" />
     <Compile Include="containers.basic\ICreateACustomErrorWhenTheDependencyCantBeCreated.cs" />

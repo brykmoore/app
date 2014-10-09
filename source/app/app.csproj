@@ -108,6 +108,8 @@
     <Compile Include="catalog_browsing\IFindProducts.cs" />
     <Compile Include="catalog_browsing\ProductsInDepartmentRequest.cs" />
     <Compile Include="catalog_browsing\ProductSummaryLine.cs" />
+    <Compile Include="containers.basic\AutomaticDependencyInjectionFactory.cs" />
+    <Compile Include="containers.basic\AutomaticDependencyInjectionFactorySpecs.cs" />
     <Compile Include="containers.basic\BasicFactory.cs" />
     <Compile Include="containers.basic\BasicFactorySpecs.cs" />
     <Compile Include="containers.basic\DependencyFactories.cs" />

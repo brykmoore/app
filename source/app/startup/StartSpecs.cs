@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using app.file_system;
+using app.utility;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
@@ -81,6 +82,11 @@ namespace app.startup
 
       It runs_each_of_the_steps_created_by_the_factory = () =>
         a_step.received(x => x.run()).Times(100);
+
+      It can_transform_while_iterating = () =>
+      {
+      };
+        
 
       static string file_name;
       static IEnumerable<string> lines;

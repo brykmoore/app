@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using app.containers.core;
 using app.file_system;
 using app.reflection;
 using app.utility;
-using Machine.Specifications;
 
 namespace app.startup
 {
@@ -22,6 +20,16 @@ namespace app.startup
       public Dependency an<Dependency>()
       {
         return container.an<Dependency>();
+      }
+
+      public IEnumerable<object> all(Type dependency_type)
+      {
+        return container.all(dependency_type);
+      }
+
+      public IEnumerable<Dependency> all<Dependency>()
+      {
+        return container.all<Dependency>();
       }
 
       public object an(Type type)
@@ -53,8 +61,8 @@ namespace app.startup
     public static void by_running_all_steps_in(string file_name)
     {
       FileSystem.read_lines_in_file(file_name)
-        .map(type_name_to_type.Invoke)
-        .map(step_factory.Invoke)
+        .Select(type_name_to_type.Invoke)
+        .Select(step_factory.Invoke)
         .each(x => x.run());
     }
   }

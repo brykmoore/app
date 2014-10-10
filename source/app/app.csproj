@@ -120,6 +120,8 @@
     <Compile Include="containers.basic\IPickTheContructorUsedToCreateAType.cs" />
     <Compile Include="containers.basic\ObjectFactory.cs" />
     <Compile Include="containers.basic\ObjectFactorySpecs.cs" />
+    <Compile Include="utility\FunctionExtensions.cs" />
+    <Compile Include="utility\FunctionsSpecs.cs" />
     <Compile Include="file_system\FileSystem.cs" />
     <Compile Include="reflection\TypeNameToTypeClass.cs" />
     <Compile Include="request_handling\ConstrainedFeatureSpecs.cs" />
@@ -133,6 +135,7 @@
     <Compile Include="startup\StartupService.cs" />
     <Compile Include="stubs\TypeNameToTypeClassSpecs.cs" />
     <Compile Include="utility.mapping\IMap.cs" />
+    <Compile Include="utility.mapping\MappingIterator.cs" />
     <Compile Include="utility\CombinedCommand.cs" />
     <Compile Include="utility\CombinedCommandSpecs.cs" />
     <Compile Include="utility\ICombineCommands.cs" />

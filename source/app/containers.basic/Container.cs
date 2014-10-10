@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using app.containers.core;
 
 namespace app.containers.basic
@@ -17,6 +18,16 @@ namespace app.containers.basic
     public Dependency an<Dependency>()
     {
       return (Dependency) an(typeof(Dependency));
+    }
+
+    public IEnumerable<Dependency> all<Dependency>()
+    {
+      throw new NotImplementedException();
+    }
+
+    public IEnumerable<object> all(Type dependency_type)
+    {
+      throw new NotImplementedException();
     }
 
     public object an(Type type)

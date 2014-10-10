@@ -14,7 +14,7 @@ namespace app.reflection
 
     public Type map(string input)
     {
-      throw new NotImplementedException();
+        return Type.GetType(input);
     }
   }
 }

@@ -130,7 +130,6 @@
     <Compile Include="startup\StartupPipelineBuilder.cs" />
     <Compile Include="startup\StartupPipelineBuilderSpecs.cs" />
     <Compile Include="startup\StartupService.cs" />
-    <Compile Include="startup\StartupSettings.cs" />
     <Compile Include="stubs\TypeNameToTypeClassSpecs.cs" />
     <Compile Include="utility.mapping\IMap.cs" />
     <Compile Include="utility\CombinedCommand.cs" />

@@ -5,7 +5,6 @@ using System.Web.Compilation;
 using app.containers.basic;
 using app.request_handling;
 using app.request_handling.aspnet;
-using app.utility;
 
 namespace app.stubs
 {
@@ -20,11 +19,14 @@ namespace app.stubs
 
       public static ICreateACustomErrorWhenTheDependencyCantBeCreated create_dependency_error_builder = (type, inner) =>
       {
-        throw new NotImplementedException(string.Format("There was an error creating the type: {0}", type.FullName), inner);
+        throw new NotImplementedException(string.Format("There was an error creating the type: {0}", type.FullName),
+          inner);
       };
 
       public static IPickTheContructorUsedToCreateAType greediest_ctor = x =>
         x.GetConstructors().OrderByDescending(y => y.GetParameters().Count()).First();
+
+      public static Type map_startup_name_to_type;
     }
 
     public class containers

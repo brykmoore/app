@@ -27,12 +27,14 @@ namespace app.startup
       }
     }
 
-    static ICreateStartupSteps step_factory = type =>
+    static ICreateStartupSteps create_step_factory ()
     {
       IProvideStartupFeatures startup_features = new StartupService(new LazyContainer());
 
-      return (IRunAStartupStep) Activator.CreateInstance(type, startup_features);
-    };
+      return x => (IRunAStartupStep) Activator.CreateInstance(x, startup_features);
+    }
+
+    static ICreateStartupSteps step_factory = create_step_factory();
 
     public static ICreateAStartupPipelineBuilder builder_factory = x =>
     {
@@ -48,7 +50,7 @@ namespace app.startup
     {
       File.ReadAllLines(file_name)
           .Select(new TypeNameToTypeClass(typeof(IRunAStartupStep)).map)
-          .Select(x => step_factory.Invoke(x))
+          .Select(step_factory.Invoke)
           .each(x => x.run());
     }
   }

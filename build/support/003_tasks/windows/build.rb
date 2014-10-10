@@ -2,7 +2,7 @@ require 'albacore'
 
 namespace :build do
   desc 'compiles the libs'
-  task :compile => %w/build:_compile build:_compile_all/ 
+  task :compile => %w/build:_compile build:_compile_all expand_all_template_files copy_config_files/ 
 
   csc :_compile => :init do|csc| 
     csc.compile FileList["source/**/*.cs"].exclude("AssemblyInfo.cs").exclude("source/app.web.ui/**/*.cs")

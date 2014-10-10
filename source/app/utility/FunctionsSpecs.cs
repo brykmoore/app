@@ -36,6 +36,7 @@ namespace app.utility
         var add_to_2 = addition.curry(2);
 
         var cached_addition = addition.memoize();
+
         cached_addition(3, 3).ShouldEqual(6);
         cached_addition(3, 3).ShouldEqual(6);
         cached_addition(3, 3).ShouldEqual(6);
@@ -57,7 +58,10 @@ namespace app.utility
         var zero = Expression.Constant(0);
         var parameter = Expression.Parameter(typeof(int), "x");
 
-        var dynamic_even_expression = Expression.Lambda<Func<int, bool>>(null, null);
+        var mod_2 = Expression.Modulo(parameter, number_2);
+        var equal_zero = Expression.Equal(mod_2, zero);
+
+        var dynamic_even_expression = Expression.Lambda<Func<int, bool>>(equal_zero, parameter);
         var dynamic_even = dynamic_even_expression.Compile();
 
         dynamic_even(2).ShouldBeTrue();

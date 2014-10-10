@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
+using app.file_system;
+using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
 
@@ -11,21 +14,33 @@ namespace app.voting_system
     {
     }
 
-    public class when_run : concern
+    public class when_run_with_no_arguments : concern
     {
       Establish c = () =>
       {
         arguments = new string[0];
+        interpreter = depends.on<IInterpret>();
       };
 
       Because b = () =>
         sut.run(arguments);
 
+        It cannot_do_the_interpretation = () =>
+            spec.exception_thrown.ShouldBeAn<ArgumentException>();
+        It does_not_get_the_arguments = () =>
+          interpreter.never_received(x => x.interpret(arguments));
+      
       static string[] arguments;
+      private static IInterpret interpreter;
     }
   }
 
-  public class VotingSystemRunner : IRunTheVotingSystem
+    internal interface IInterpret
+    {
+        List<object> interpret(IEnumerable<string> arguments);
+    }
+
+    public class VotingSystemRunner : IRunTheVotingSystem
   {
     public void run(IEnumerable<string> arguments)
     {

@@ -121,7 +121,9 @@
     <Compile Include="containers.basic\IPickTheContructorUsedToCreateAType.cs" />
     <Compile Include="containers.basic\ObjectFactory.cs" />
     <Compile Include="containers.basic\ObjectFactorySpecs.cs" />
-    <Compile Include="utility.validation\ValidationSpecs.cs" />
+    <Compile Include="voting_system\ConfigureVotingSystem.cs" />
+    <Compile Include="voting_system\VotingSystemConsole.cs" />
+    <Compile Include="voting_system\VotingSystemConsoleRunnerSpecs.cs" />
     <Compile Include="utility\FunctionExtensions.cs" />
     <Compile Include="utility\FunctionsSpecs.cs" />
     <Compile Include="file_system\FileSystem.cs" />
@@ -204,6 +206,7 @@
     <Compile Include="utility\EnumerableExtensions.cs" />
     <Compile Include="utility\RunnableExtensions.cs" />
     <Compile Include="utility\RunnableExtensionsSpecs.cs" />
+    <Compile Include="voting_system\SampleTextFragments.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

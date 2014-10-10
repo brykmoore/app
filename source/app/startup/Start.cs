@@ -58,6 +58,11 @@ namespace app.startup
       return builder_factory(typeof(StartupStep));
     }
 
+    public static ICreateStartupPipelines by_running_only<StartupStep>() where StartupStep : IRunAStartupStep
+    {
+      step_factory(typeof(StartupStep)).run();
+    }
+
     public static void by_running_all_steps_in(string file_name)
     {
       FileSystem.read_lines_in_file(file_name)

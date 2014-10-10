@@ -75,6 +75,7 @@
       <HintPath>..\..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -120,6 +121,7 @@
     <Compile Include="containers.basic\IPickTheContructorUsedToCreateAType.cs" />
     <Compile Include="containers.basic\ObjectFactory.cs" />
     <Compile Include="containers.basic\ObjectFactorySpecs.cs" />
+    <Compile Include="utility.validation\ValidationSpecs.cs" />
     <Compile Include="utility\FunctionExtensions.cs" />
     <Compile Include="utility\FunctionsSpecs.cs" />
     <Compile Include="file_system\FileSystem.cs" />

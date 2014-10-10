@@ -1,13 +1,13 @@
-﻿namespace app.startup
+﻿using System;
+using System.IO;
+
+namespace app.startup
 {
   public class StartApplication
   {
     public static void run()
     {
-      Start.by<ConfiguringTheContainer>()
-        .then<ConfigureFrontController>()
-        .finish_by<ConfigureRoutes>();
-        
+      Start.by_running_all_steps_in(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "startup_pipeline"));
     }
   }
 }

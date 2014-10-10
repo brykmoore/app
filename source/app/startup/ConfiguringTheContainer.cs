@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using app.containers.basic;
+﻿using app.containers.basic;
 using app.containers.core;
 using app.stubs;
 
@@ -16,11 +15,7 @@ namespace app.startup
 
     public void run()
     {
-      var factories = new List<ICreateAnObject>();
-
-      var factory_registry = new DependencyFactories(factories,
-        StubRuntimeDelegates.startup.create_missing_dependency_factory);
-
+      var factory_registry = new DependencyFactories(startup.factories, StubRuntimeDelegates.startup.create_missing_dependency_factory);
       var container = new Container(factory_registry, StubRuntimeDelegates.startup.create_dependency_error_builder);
       Dependencies.access_the_container = () => container;
     }

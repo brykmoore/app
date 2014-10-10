@@ -128,6 +128,10 @@
     <Compile Include="startup\StartSpecs.cs" />
     <Compile Include="startup\StartupPipelineBuilder.cs" />
     <Compile Include="startup\StartupPipelineBuilderSpecs.cs" />
+    <Compile Include="startup\StartupService.cs" />
+    <Compile Include="startup\StartupSettings.cs" />
+    <Compile Include="utility\CombinedCommand.cs" />
+    <Compile Include="utility\CombinedCommandSpecs.cs" />
     <Compile Include="utility\ICombineCommands.cs" />
     <Compile Include="utility\IEnforceAConstraint.cs" />
     <Compile Include="containers.basic\Container.cs" />
@@ -188,6 +192,8 @@
     <Compile Include="request_handling.aspnet\WebFormDisplayEngineSpecs.cs" />
     <Compile Include="request_handling.aspnet\WebFormFactorySpecs.cs" />
     <Compile Include="utility\IRunnable.cs" />
+    <Compile Include="utility\RunnableExtensions.cs" />
+    <Compile Include="utility\RunnableExtensionsSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

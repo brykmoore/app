@@ -33,6 +33,8 @@ namespace app.utility
           return x + y;
         };
 
+        var add_to_2 = addition.curry(2);
+
         var cached_addition = addition.memoize();
         cached_addition(3, 3).ShouldEqual(6);
         cached_addition(3, 3).ShouldEqual(6);
@@ -44,6 +46,21 @@ namespace app.utility
         cached_addition(8, 5).ShouldEqual(13);
 
         times_invoked.ShouldEqual(3);
+      }; 
+
+      It can_build_up_methods_dynamically_by_using_expression_trees = () =>
+      {
+        Func<int, bool> even = x => x%2 == 0;
+        even(2).ShouldBeTrue();
+
+        var number_2 = Expression.Constant(2);
+        var zero = Expression.Constant(0);
+        var parameter = Expression.Parameter(typeof(int), "x");
+
+        var dynamic_even_expression = Expression.Lambda<Func<int, bool>>(null, null);
+        var dynamic_even = dynamic_even_expression.Compile();
+
+        dynamic_even(2).ShouldBeTrue();
       }; 
     }
   }

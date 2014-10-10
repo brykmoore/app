@@ -14,7 +14,7 @@ namespace app.reflection
 
     public Type map(string input)
     {
-        return Type.GetType(input);
+      return resolution_type.Assembly.GetType(input);
     }
   }
 }

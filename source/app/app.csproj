@@ -193,7 +193,9 @@
     <Compile Include="request_handling\ViewReportSpecs.cs" />
     <Compile Include="request_handling.aspnet\WebFormDisplayEngineSpecs.cs" />
     <Compile Include="request_handling.aspnet\WebFormFactorySpecs.cs" />
+    <Compile Include="utility\IProcessAnElement.cs" />
     <Compile Include="utility\IRunnable.cs" />
+    <Compile Include="utility\IteratingExtensions.cs" />
     <Compile Include="utility\RunnableExtensions.cs" />
     <Compile Include="utility\RunnableExtensionsSpecs.cs" />
   </ItemGroup>

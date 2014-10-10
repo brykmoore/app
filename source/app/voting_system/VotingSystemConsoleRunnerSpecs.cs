@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
 
@@ -20,7 +21,6 @@ namespace app.voting_system
       Because b = () =>
         sut.run(arguments);
 
-
       static string[] arguments;
     }
   }
@@ -29,7 +29,7 @@ namespace app.voting_system
   {
     public void run(IEnumerable<string> arguments)
     {
-      throw new System.NotImplementedException();
+      throw new NotImplementedException();
     }
   }
 
@@ -66,6 +66,4 @@ namespace app.voting_system
      * 
      * 
      */
-}
-
 }

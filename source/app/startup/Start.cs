@@ -10,10 +10,7 @@ namespace app.startup
     {
       IGetDependencies container
       {
-        get
-        {
-          return Dependencies.fetch;
-        }
+        get { return Dependencies.fetch; }
       }
 
       public Dependency an<Dependency>()
@@ -27,12 +24,15 @@ namespace app.startup
       }
     }
 
-    public static ICreateAStartupPipelineBuilder builder_factory = x =>
+    static ICreateStartupSteps step_factory = type =>
     {
       IProvideStartupFeatures startup_features = new StartupService(new LazyContainer());
 
-      ICreateStartupSteps step_factory = type => (IRunAStartupStep) Activator.CreateInstance(type,startup_features);
+      return (IRunAStartupStep) Activator.CreateInstance(type, startup_features);
+    };
 
+    public static ICreateAStartupPipelineBuilder builder_factory = x =>
+    {
       return new StartupPipelineBuilder(step_factory(x), step_factory, RunnableExtensions.combine_with);
     };
 
@@ -43,7 +43,13 @@ namespace app.startup
 
     public static void by_running_all_steps_in(string file_name)
     {
-      throw new NotImplementedException();
+      //read the file -> lines
+      /*
+       * foreach line in file
+       *  get the type for the startup step class 
+       *  create the step 
+       *  run the step 
+       */
     }
   }
 }

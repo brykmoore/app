@@ -120,6 +120,7 @@
     <Compile Include="containers.basic\IPickTheContructorUsedToCreateAType.cs" />
     <Compile Include="containers.basic\ObjectFactory.cs" />
     <Compile Include="containers.basic\ObjectFactorySpecs.cs" />
+    <Compile Include="reflection\TypeNameToTypeClass.cs" />
     <Compile Include="request_handling\ConstrainedFeatureSpecs.cs" />
     <Compile Include="startup\ICreateAStartupPipelineBuilder.cs" />
     <Compile Include="startup\ICreateStartupPipelines .cs" />
@@ -130,6 +131,8 @@
     <Compile Include="startup\StartupPipelineBuilderSpecs.cs" />
     <Compile Include="startup\StartupService.cs" />
     <Compile Include="startup\StartupSettings.cs" />
+    <Compile Include="stubs\TypeNameToTypeClassSpecs.cs" />
+    <Compile Include="utility.mapping\IMap.cs" />
     <Compile Include="utility\CombinedCommand.cs" />
     <Compile Include="utility\CombinedCommandSpecs.cs" />
     <Compile Include="utility\ICombineCommands.cs" />

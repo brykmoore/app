@@ -4,4 +4,6 @@
   {
     Output map(Input input); 
   }
+
+  public delegate Output IMapper<in Input, out Output>(Input input);
 }

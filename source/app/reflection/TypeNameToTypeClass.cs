@@ -1,20 +1,25 @@
 ﻿using System;
+using System.Reflection;
 using app.utility.mapping;
 
 namespace app.reflection
 {
   public class TypeNameToTypeClass : IMap<string, Type>
   {
-    Type resolution_type;
+    Assembly resolution_assembly;
 
-    public TypeNameToTypeClass(Type resolution_type)
+    public TypeNameToTypeClass(Assembly resolution_assembly)
     {
-      this.resolution_type = resolution_type;
+      this.resolution_assembly = resolution_assembly;
+    }
+
+    public TypeNameToTypeClass():this(Assembly.GetExecutingAssembly())
+    {
     }
 
     public Type map(string input)
     {
-      return resolution_type.Assembly.GetType(input);
+      return resolution_assembly.GetType(input);
     }
   }
 }

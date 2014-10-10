@@ -34,7 +34,7 @@ namespace app.stubs
       {
         Establish c = () =>
         {
-          depends.on(typeof(IRunAStartupStep));
+          depends.on(typeof(IRunAStartupStep).Assembly);
         };
 
         Because b = () =>

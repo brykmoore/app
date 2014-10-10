@@ -16,9 +16,9 @@ namespace app.stubs
 
     public IEnumerator<IHandleOneRequest> GetEnumerator()
     {
+      yield return create_handler_to_view<IEnumerable<ProductSummaryLine>, GetProductsInDepartment>();
       yield return create_handler_to_view<IEnumerable<DepartmentLineItem>, GetTheMainDepartments>();
       yield return create_handler_to_view<IEnumerable<DepartmentLineItem>, GetDepartmentsInDepartment>();
-      yield return create_handler_to_view<IEnumerable<ProductSummaryLine>, GetProductsInDepartment>();
     }
 
     IHandleOneRequest create_handler_to_view<Report>(IFetchAReport<Report> query)

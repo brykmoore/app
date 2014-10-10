@@ -120,6 +120,7 @@
     <Compile Include="containers.basic\IPickTheContructorUsedToCreateAType.cs" />
     <Compile Include="containers.basic\ObjectFactory.cs" />
     <Compile Include="containers.basic\ObjectFactorySpecs.cs" />
+    <Compile Include="file_system\FileSystem.cs" />
     <Compile Include="reflection\TypeNameToTypeClass.cs" />
     <Compile Include="request_handling\ConstrainedFeatureSpecs.cs" />
     <Compile Include="startup\ICreateAStartupPipelineBuilder.cs" />
@@ -195,7 +196,7 @@
     <Compile Include="request_handling.aspnet\WebFormFactorySpecs.cs" />
     <Compile Include="utility\IProcessAnElement.cs" />
     <Compile Include="utility\IRunnable.cs" />
-    <Compile Include="utility\IteratingExtensions.cs" />
+    <Compile Include="utility\EnumerableExtensions.cs" />
     <Compile Include="utility\RunnableExtensions.cs" />
     <Compile Include="utility\RunnableExtensionsSpecs.cs" />
   </ItemGroup>

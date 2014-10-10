@@ -1,7 +1,7 @@
 ﻿using System;
-using System.IO;
 using System.Linq;
 using app.containers.core;
+using app.file_system;
 using app.reflection;
 using app.utility;
 
@@ -27,14 +27,15 @@ namespace app.startup
       }
     }
 
-    static ICreateStartupSteps create_step_factory ()
+    public static ICreateStartupSteps step_factory = create_step_factory();
+    public static Func<string, Type> type_name_to_type = new TypeNameToTypeClass().map;
+
+    static ICreateStartupSteps create_step_factory()
     {
       IProvideStartupFeatures startup_features = new StartupService(new LazyContainer());
 
       return x => (IRunAStartupStep) Activator.CreateInstance(x, startup_features);
     }
-
-    static ICreateStartupSteps step_factory = create_step_factory();
 
     public static ICreateAStartupPipelineBuilder builder_factory = x =>
     {
@@ -48,10 +49,10 @@ namespace app.startup
 
     public static void by_running_all_steps_in(string file_name)
     {
-      File.ReadAllLines(file_name)
-          .Select(new TypeNameToTypeClass(typeof(IRunAStartupStep)).map)
-          .Select(step_factory.Invoke)
-          .each(x => x.run());
+      FileSystem.read_lines_in_file(file_name)
+        .Select(type_name_to_type)
+        .map(step_factory.Invoke)
+        .each(x => x.run());
     }
   }
 }

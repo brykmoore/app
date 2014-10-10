@@ -11,7 +11,10 @@ namespace app.utility
 
     public static Func<T, T, T> memoize<T>(this Func<T, T, T> method)
     {
-      throw new NotImplementedException();      
+      return (x, y) =>
+      {
+        return method(x, y);
+      };
     }
   }
 }

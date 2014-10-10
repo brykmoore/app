@@ -22,6 +22,29 @@ namespace app.utility
         addition(2, 3).ShouldEqual(5);
         add_5_to_a_number(8).ShouldEqual(13);
       }; 
+
+      It can_cache_values_for_methods_that_have_already_been_called = () =>
+      {
+        var times_invoked = 0;
+
+        Func<int, int, int> addition = (x, y) =>
+        {
+          times_invoked++;
+          return x + y;
+        };
+
+        var cached_addition = addition.memoize();
+        cached_addition(3, 3).ShouldEqual(6);
+        cached_addition(3, 3).ShouldEqual(6);
+        cached_addition(3, 3).ShouldEqual(6);
+        cached_addition(4, 7).ShouldEqual(11);
+        cached_addition(4, 7).ShouldEqual(11);
+        cached_addition(4, 7).ShouldEqual(11);
+        cached_addition(4, 7).ShouldEqual(11);
+        cached_addition(8, 5).ShouldEqual(13);
+
+        times_invoked.ShouldEqual(3);
+      }; 
     }
   }
 }
